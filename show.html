@@ -1,0 +1,13 @@
+<html>
+  <head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <table border="0">
+    <tr><th>GeneID</th><th>status</th><th>taken by</th></tr>
+    {% for g in genes %}
+    <tr><td>{{g.wbgeneId}}</td><td>{{g.status}}</td><td>{{g.user}}</td><tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+	<b>{{status}}</b>
+    <form action="/get" method="get">
+      <p>GeneID:<input name="wbgeneId" value="{{randomGene}}"> <input type="submit" value="Take Gene"></p>
+    </form>
+    {% if gene %}
+    <table border="0">
+    <tr><th>GeneID</th><th>status</th><th>taken by</th></tr>
+    <tr><td>{{gene.wbgeneId}}</td><td>{{gene.status}}</td><td>{{user}}</td><tr>
+    </table>
+    {% endif %}
+    <p> The form will show a default suggestion of a random gene from the curation list. Reload the page to get a different one. Taking a gene will remove it from the curation list and set it's status to <b>done<b>.
+    </p>
+  </body>
+</html>
